@@ -1,0 +1,20 @@
+{
+  "name": "schemagluepoc",
+  "version": "1.0.0",
+  "description": "graphql schema glue poc",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon src/index.js --ext js,graphql --exec babel-node"
+  },
+  "author": "madhav",
+  "license": "ISC",
+  "dependencies": {
+    "apollo-server": "^2.23.0",
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-stage-0": "^6.24.1",
+    "graphql-yoga": "^1.18.3",
+    "nodemon": "^2.0.7",
+    "schemaglue": "^4.1.0"
+  }
+}
