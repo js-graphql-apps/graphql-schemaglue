@@ -9,6 +9,15 @@ type Address {
   country: String!
 }
 
+input AddressInput {
+  location1: String!
+  location2: String
+  city: String!
+  state: String!
+  zipCode: String!
+  country: String!
+}
+
 
 type Query {
   # ### GET vehicles

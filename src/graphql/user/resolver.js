@@ -14,4 +14,24 @@ export const resolver = {
       return add;
     },
   },
+  Mutation: {
+    addUser(root, args, ctx) {
+      const addressId = Math.ceil(Math.random() * 1000);
+
+      addressList.push({
+        id: addressId,
+        ...args.input.address,
+      });
+
+      const userId = Math.ceil(Math.random() * 1000);
+
+      users.push({
+        id: userId,
+        ...args.input,
+        addressId,
+      });
+
+      return users.find((u) => u.id == userId);
+    },
+  },
 };
