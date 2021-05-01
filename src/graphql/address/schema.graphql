@@ -1,0 +1,18 @@
+
+type Address {
+  id: ID!
+  location1: String!
+  location2: String
+  city: String!
+  state: String!
+  zipCode: String!
+  country: String!
+}
+
+
+type Query {
+  # ### GET vehicles
+  #
+  # - **id**: Vehicle id (optional)
+  addresses(id: Int): [Address]
+}

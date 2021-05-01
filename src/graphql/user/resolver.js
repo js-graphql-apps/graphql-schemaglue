@@ -1,15 +1,17 @@
-const userMocks = [
-  { id: 1, name: "Paul bryant", dob: "1978-01-01" },
-  { id: 2, name: "Ning yang", dob: "1988-05-01" },
-  { id: 3, name: "Rachel Simpson", dob: "1990-08-01" },
-];
+import { users, addressList } from "../../DataModel/MockData";
 
 export const resolver = {
   Query: {
     users(root, { id }, context) {
-      const results = id ? userMocks.filter((p) => p.id == id) : userMocks;
+      const usrs = id ? users.filter((p) => p.id == id) : users;
 
-      return results.length > 0 ? results : [];
+      return usrs.length > 0 ? usrs : [];
+    },
+  },
+  User: {
+    address(root, { id }, ctx) {
+      const add = addressList.find((a) => root.addressId == a.id);
+      return add;
     },
   },
 };
